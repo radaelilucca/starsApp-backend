@@ -1,9 +1,14 @@
-import {Router} from 'express'
+import { Router } from 'express';
 
-import UserController from './app/controllers/UserController'
+import UserController from './app/controllers/UserController';
+import StarController from './app/controllers/StarController';
 
-const routes = Router()
+const routes = Router();
 
-routes.post('/users', UserController.store)
+// create user
+routes.post('/users', UserController.store);
 
-export default routes
+// give stars
+routes.put('/stars/give', StarController.update);
+
+export default routes;

@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 
 const UserSchema = new mongoose.Schema({
   name: String,
@@ -6,7 +6,16 @@ const UserSchema = new mongoose.Schema({
     type: String,
     unique: true,
     lowcase: true,
-  }
-})
 
-export default mongoose.model('User', UserSchema)
+  },
+  starsHistory: [
+
+  ],
+  stars: {
+    type: Number,
+    default: 0,
+
+  },
+});
+
+export default mongoose.model('User', UserSchema);
