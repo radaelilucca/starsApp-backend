@@ -11,7 +11,6 @@ class StarController {
       return res.status(404).json({ error: 'This user does not exist' });
     }
 
-
     const star = {
       amount,
       reason,
@@ -20,7 +19,6 @@ class StarController {
 
     const updatedHistory = user.starsHistory;
     updatedHistory.push(star);
-
 
     await user.update({
       starsHistory: updatedHistory,
@@ -41,7 +39,6 @@ class StarController {
     }
 
     const history = user.starsHistory;
-
 
     return res.json(history);
   }
