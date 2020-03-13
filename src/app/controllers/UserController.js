@@ -1,4 +1,4 @@
-import { subHours } from 'date-fns';
+
 import User from '../models/User';
 
 class UserController {
@@ -8,12 +8,13 @@ class UserController {
       username,
     } = req.body;
 
+    // check if user exist
     let user = await User.findOne({ username });
 
     if (!user) {
       user = await User.create({
         name,
-        username,
+        username: username.toLowerCase(),
       });
       return res.json({ user });
     }

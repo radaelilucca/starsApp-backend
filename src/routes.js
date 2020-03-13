@@ -8,7 +8,9 @@ const routes = Router();
 // create user
 routes.post('/users', UserController.store);
 
-// give stars
-routes.put('/stars/give', StarController.update);
+// create (give) stars
+routes.post('/stars/give', StarController.store);
+// list stars history
+routes.get('/stars/history/:username', StarController.index);
 
 export default routes;

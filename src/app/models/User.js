@@ -8,9 +8,7 @@ const UserSchema = new mongoose.Schema({
     lowcase: true,
 
   },
-  starsHistory: [
-
-  ],
+  starsHistory: [],
   stars: {
     type: Number,
     default: 0,
